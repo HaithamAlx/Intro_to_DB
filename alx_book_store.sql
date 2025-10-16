@@ -1,4 +1,7 @@
-CREATE TABLE Author (author_id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE DATABASE IF NOT EXISTS alx_book_store;
+USE alx_book_store;
+
+CREATE TABLE Authors (author_id INT AUTO_INCREMENT PRIMARY KEY,
                     author_name VARCHAR(213) NOT NULL);
 
 CREATE TABLE Books ( book_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -6,7 +9,7 @@ CREATE TABLE Books ( book_id INT AUTO_INCREMENT PRIMARY KEY,
                     author_id INT ,
                     price DOUBLE        ,
                     publication_date DATE ,
-                    FOREIGN KEY (author_id) REFERENCES Author(author_id)
+                    FOREIGN KEY (author_id) REFERENCES Authors(author_id)
                     );
 
 
@@ -23,7 +26,7 @@ CREATE TABLE Orders ( order_id INT AUTO_INCREMENT PRIMARY KEY,
                      FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
                     );
 
-CREATE TABLE Order_Details ( orderdetail_id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE Order_Details ( orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
                             order_id INT, 
                             book_id INT , 
                             quantity DOUBLE, 
