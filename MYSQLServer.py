@@ -23,4 +23,7 @@ try:
 except Error as e:
     print(f"Error while connecting to MySQL: {e}")
 
+# The end
+
+
 
